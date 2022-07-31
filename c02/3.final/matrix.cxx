@@ -98,7 +98,7 @@ Matrix *matrix_mult(const Matrix *lhs, const Matrix *rhs) {
     for (size_t j = 0; j < RNC; ++j) {
       result->data[i] = (double *) malloc(LNC * sizeof(double));
       for(size_t k = 0; k < LNC; ++k){
-        result->data[i][j] = ((lhs->data[i][k]) * (rhs->data[k][j]));
+        result->data[i][j] += ((lhs->data[i][k]) * (rhs->data[k][j]));
       }
     }
   }
