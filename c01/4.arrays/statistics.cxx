@@ -8,7 +8,6 @@
 
 #include <math.h>
 #include <stdio.h>
-#include <string.h>
 
 /// computa el promedio de los valores en el arreglo x
 /// n: tamano del arreglo
@@ -50,14 +49,9 @@ static double varp_ecf(int n, const double x[]) {
 /// x: arreglo de datos
 static double varp_sdf(int n, const double x[]) {
   double average = mean(n, x);
-
-  double sum = 0;
-  for(int i =0; i <= n; ++i)
-  {
-     sum = (sum + (x[i] - average)*(x[i] - average));
-  }
-
-  double result = sum/n; 
+  // calcular la suma de los cuadrados de las desviaciones y dividir por N
+  // result = sum [ i = 0 .. , (x[i] - average)^2 ] / N
+  double result = 0.0; // << reemplazar por la formula final
   return result;
 }
 
@@ -79,4 +73,3 @@ static double chequed_varp(int n, const double x[]) {
 double varp(int n, const double x[]) {
   return chequed_varp(n, x);
 }
-

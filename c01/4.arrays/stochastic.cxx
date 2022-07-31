@@ -1,6 +1,8 @@
 ///
 /// stochastic.cxx
 ///
+/// Generadores de numeros aleatorios para simulaciones estocasticas
+///
 
 #include "stochastic.h"
 
@@ -30,7 +32,7 @@ double uniform() {
 /// genera un numero aleatorio de acuerdo a una distribucion normal estandar
 /// la distribucion normal estandar tiene promedio 0 y varianza 1
 double normal() {
-  double result = ((sqrt((-2*log(uniform())))*cos(2*M_PI*uniform()))); // << reemplazar por la formula magica
+  double result = 0.0; // << reemplazar por la formula magica
   return result;
 }
 
@@ -39,4 +41,3 @@ int random_int(int lb, int ub) {
   int k = lb + int(floor((ub - lb) * uniform()));
   return k;
 }
-

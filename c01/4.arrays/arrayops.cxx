@@ -2,8 +2,8 @@
 /// Operaciones con arreglos (array operations)
 ///
 
+#include "arrayops.h"
 #include "stochastic.h"
-#include "statistics.h"
 
 #include <math.h>
 #include <stdlib.h>
@@ -68,20 +68,29 @@ int find_int(int k, int n, const int a[]) {
     }
   }
   return result;
+  // no hay nada que completar: este codigo esta listo ... es la definicion de papa pelada
+  // SIN EMBARGO, deben leer y entender todo el codigo suministrado en la tarea para aprender!
+  // borren los comentarios de tarea y ayuda ... pero no los que documentan las funciones.
 }
 
 // *** TAREA 2 pts ***
 // implementar la funcion (ver encabezado)
 //  .........
 int find_string(const char *s, int n, const char *a[]) {
-
   int result = -1;
-  for (int i = 0; i < n; ++i) {
-    if (strcmp(a[i],s)==0) {
-      result = i;
-      break;
-    }
-  }  
+  // analogo a find_int, mutatis mutandis
+  // completar el codigo, usando la funcion estandar strcmp para comparar strings
+  // ya conocen strcmp, pero es buena costumbre ver documentacion en caso de dudas
+  // estas fuentes son populares - aparecen entre los primeros resultados de busqueda:
+  // https://devdocs.io/c/string/byte/strcmp
+  // https://cplusplus.com/reference/cstring/strcmp/
+  // https://www.tutorialspoint.com/c_standard_library/c_function_strcmp.htm
+  // https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/strcmp-wcscmp-mbscmp
+  //
+  // en general pueden referirse al manual de libc (libreria estandar de C); aqui esta el de GNU
+  // https://www.gnu.org/software/libc/manual/pdf/libc.pdf
+  //
+  // por cierto: "standard means standard" todo lo que es estandar funciona igual en Unix y Windows
   return result;
 }
 
@@ -91,11 +100,7 @@ int find_string(const char *s, int n, const char *a[]) {
 int find_min_int(int i, int j, const int a[]) {
   int mindx = i;
   int min = a[mindx];
-  
-  for (i; i<j; ++i)
-    if (a[i]<min){
-      mindx = i; 
-    }  
+  // buscar el indice del minimo verdadero ...
   return mindx;
 }
 
@@ -103,29 +108,16 @@ int find_min_int(int i, int j, const int a[]) {
 // implementar la funcion (ver encabezado)
 //  .........
 int find_min_double(int i, int j, const double a[]) {
-  int mindx = i;
-  double min = a[mindx];
-
-  for (i; i<j; ++i)
-    if (a[i]<min){
-      mindx = i; 
-    }  
-  return mindx;
+  // analogo a find_min_int, mutatis mutandis
+  return -1;
 }
 
 // *** TAREA 2 pts ***
 // implementar la funcion (ver encabezado)
 //  .........
 int find_min_string(int i, int j, const char *a[]) {
-
-  int mindx = i;
-  const char* min = a[mindx];
-  for (i; i<j; ++i)
-    if ((a[i])<(min)){
-      mindx = i;
-      }  
-
-  return mindx;  
+  // analogo a find_min_int, mutatis mutandis
+  return -1;
 }
 
 /// Operaciones para desordenar arreglos
@@ -139,9 +131,7 @@ int find_min_string(int i, int j, const char *a[]) {
 /// data: arreglo de enteros
 /// precondicion: 'i' y 'j' deben ser indices validos en 'data'
 static void swap_int_elements(int i, int j, int data[]) {
-  int tmp = data[i];
-  data[i] = data[j];
-  data[j] = tmp; 
+  // analogo a swap_double_elements (abajo), mutatis mutandis
 }
 
 /// intercambia dos elementos en un arreglo de numeros (doble precision)
@@ -176,10 +166,8 @@ static void swap_double_elements_desugared(int i, int j, double *data) {
 /// j: indice del segundo elemento
 /// data: arreglo de strings
 /// precondicion: 'i' y 'j' deben ser indices validos en 'data'
-static void swap_string_elements(int i, int j, char *data[]) { // char *data[] no puede ser constante, porque debe cambiar 
-  char *tmp = data[i];
-  data[i] = data[j];
-  data[j] = tmp; 
+static void swap_string_elements(int i, int j, const char *data[]) {
+  // analogo a swap_double_elements (abajo), mutatis mutandis
 }
 
 void shuffle_int_array(int n, int a[]) {
@@ -193,10 +181,7 @@ void shuffle_int_array(int n, int a[]) {
 // implementar la funcion
 //  .........
 void shuffle_double_array(int n, double a[]) {
-  for (int i = 0; i < n; ++i) {
-    double j = double(random_int(i, n));
-    swap_double_elements(i, j, a);
-  }
+  // analogo a shuffle_int_array, mutatis mutandis
 }
 
 // *** TAREA 2 pts ***
@@ -231,4 +216,3 @@ void selection_sort_double_array(int n, double a[]) {
 void selection_sort_string_array(int n, const char *a[]) {
   // analogo a selection_sort_int_array, mutatis mutandis
 }
-

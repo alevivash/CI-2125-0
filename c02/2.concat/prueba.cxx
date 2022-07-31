@@ -11,8 +11,7 @@ const char *concatenate(const char *lhs, const char *rhs) {
   strcpy(result,lhs);
   strcpy(&result[lsize],rhs);
 
-
-  // ... completar
+  return result;
 }
 
 int main(void)

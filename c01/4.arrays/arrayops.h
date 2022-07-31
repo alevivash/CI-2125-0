@@ -5,7 +5,7 @@
 ///
 
 ///
-/// Constructores y destructores
+/// Constructores y destructores de arreglos
 ///
 
 /// crea un arreglo de numeros (enteros) inicializados en cero
@@ -74,7 +74,7 @@ int find_min_double(int i, int j, const double a[]);
 /// j: posicion de terminacion de la busqueda (no incluida en el rango valido)
 /// a: arreglo de strings (cadenas de caracteres)
 /// precondiciones: 0 <= i < j <= n, donde n es el tamano de 'a'
-int find_min_string(int i, int j, const char *const  a[]);
+int find_min_string(int i, int j, const char *const a[]);
 
 ///
 /// Operaciones para desordenar arreglos

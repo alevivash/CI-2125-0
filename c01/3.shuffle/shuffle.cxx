@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <math.h>
 
-double seed = 0.1915926539;
+double seed = 0.1415926539;
 
 // genera enter aleatorio k tal que i <= k < N
 int rand_index(int i, int N) {

@@ -22,53 +22,23 @@
 ///
 
 #include <stdio.h>
-#include <string.h>
 
 int main(int argc, const char *argv[])
 {
-
-  if (argc == 1)
-
-  {
-
-    printf("Hello world!\n");
-  } 
-
-   else if ((argc >=2 && argc <=3) && ((strcmp(argv[1], "en")) == 0 || (strcmp(argv[1], "sp")) == 0))
-
-  {
-    if (strcmp(argv[1], "en") == 0)
-    
-    {
-        
-    if (argv[2] != NULL)
-        printf("Hello %s!\n", argv[2]);    
-    else
-        printf("Hello world!\n");
-        
-    } 
-    
-    else if (strcmp(argv[1], "sp") == 0) 
-    
-    {
-        
-    if (argv[2] != NULL)
-        printf("Hola %s!\n", argv[2]);    
-    else
-        printf("Hola mundo!\n");    
-
+  if (argc == 1) {
+    // ...
+  } else if (2 <= argc && argc <= 3) {
+    if (strcmp(argv[1], "en")) {
+      fprintf(stdout, "Manchester United");
+      // ...
+    } else if (strcmp(argv[1], "sp")) {
+      fprintf(stdout, "Real Madrid");
+      // ...
     }
-
-    return 0;
-
-  } 
-
-  else
-
-  {
-      
+    // ...
+  } else {
     fprintf(stderr, "uso: %s <<< incompleto >>>\n", argv[0]);
     return 1;
-    
   }
+  return 0;
 }

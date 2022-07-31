@@ -9,19 +9,21 @@
 #include <stdlib.h>
 #include <string.h>
 
-/// concatenate strings
-/// const char *lhs: left hand side operand
-/// const char *rhs: right hand side operand
-const char *concatenate(const char *lhs, const char *rhs) {
-  size_t lsize = strlen(lhs);
-  size_t rsize = strlen(rhs);
-  
-  char *result = (char * ) malloc((lsize + rsize + 1) * sizeof(char));
-  strcpy(result,lhs);
-  strcpy(&result[lsize],rhs);
+const char *pera = "pera";
+const char *lima = " lima";
 
+/// concatenate strings
+/// const char *str1: left hand side operand
+/// const char *str2: right hand side operand
+const char *concatenate(const char *str1, const char *str2) {
+  size_t L1 = strlen(str1);
+  size_t L2 = strlen(str2);
+  char *result = (char *) malloc((L1 + L2 + 1) * sizeof(char));
+  strcpy(result, str1);
+  strcpy(&result[L1], str2);
   return result;
 }
+
 
 const char *whiskey = "whiskey ";
 const char *tango = "tango ";

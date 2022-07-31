@@ -7,12 +7,11 @@
 ///
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main(int argc, const char *argv[])
 {
   // obtener el valor de N a partir del argumento
-  int N = atoi(argv[1]);
+  int N = argv[1];
 
   // contar de 1 a N
   int i = 1;
